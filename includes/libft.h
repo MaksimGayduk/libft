@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2018/06/01 16:56:20 by mgayduk          ###   ########.fr       */
+/*   Updated: 2019/07/22 19:06:39 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@
 # include "get_next_line.h"
 # include "ft_printf.h"
 # include "ft_btree.h"
+# include "ft_getopt.h"
 
 # define FT_ABS(x) x < 0 ? -x : x
+# define FT_BOOL(x) x ? 1 : 0
 
 typedef struct		s_list
 {
@@ -93,7 +95,7 @@ void				ft_strrev(char *str);
 
 void				ft_clear_strarr(char ***str_arr);
 size_t				ft_len_strarr(char **arr);
-void				ft_put_strarr(char **arr);
+void				ft_put_strarr(char *const *const arr);
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

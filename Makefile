@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+         #
+#    By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2018/03/13 18:39:58 by mgayduk          ###   ########.fr        #
+#    Updated: 2019/07/22 17:45:43 by maks             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC 		:= gcc -Wall -Wextra -Werror -c
+CC 		:= gcc -Wall -Wextra -Werror -c -g
 
 NAME 	:= libft.a
 
@@ -18,7 +18,8 @@ INC_DIR := ./includes
 
 SRC_DIRS := mem_funcs	str_funcs	str_arr_funcs	\
 			char_funcs 	list_funcs 	int_funcs		\
-			rw_funcs 	ft_printf 	btree_funcs
+			rw_funcs 	ft_printf 	btree_funcs		\
+			ft_getopt
 
 OBJ_DIR	 := ./objs
 
@@ -132,12 +133,14 @@ BTREE_FUNCS :=	ft_btreenew.c 				\
 				ft_btree_erase.c			\
 				ft_btree_inorder_print.c				
 		
-
+FT_GETOPT :=	ft_getopt.c					\
+				flag_parser.c
 
 
 SRCS = 	$(MEM_FUNCS)	$(STR_FUNCS)	$(STR_ARR_FUNCS)  	\
 		$(CHAR_FUNCS)	$(LIST_FUNCS) 	$(INT_FUNCS)    	\
-		$(RW_FUNCS) 	$(FT_PRINTF) 	$(BTREE_FUNCS)
+		$(RW_FUNCS) 	$(FT_PRINTF) 	$(BTREE_FUNCS)		\
+		$(FT_GETOPT)
 
 OBJS = $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
 
