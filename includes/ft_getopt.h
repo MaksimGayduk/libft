@@ -6,7 +6,7 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 12:59:03 by maks              #+#    #+#             */
-/*   Updated: 2019/07/22 19:06:36 by maks             ###   ########.fr       */
+/*   Updated: 2019/07/23 15:24:23 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ typedef struct		s_flag
 
 extern int g_flag_position;
 
-int ft_getopt(int argc, char *const argv[], const char *opt_string);
-t_flag *parse_flag(int argc __unused, char *const flag_str, const char *opt_str);
+int					ft_getopt(int argc, char *const *argv, const char *opstr);
+t_flag				*parse_flag(char *const flag_str, const char *opt_str);
+void				print_flag(t_flag *flag);
+void				set_global_vars(int optind_inc, int g_flag_position);
+int					is_flag(char *const str);
 
 #endif

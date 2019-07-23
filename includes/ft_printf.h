@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgayduk <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 14:52:28 by mgayduk           #+#    #+#             */
-/*   Updated: 2018/01/27 17:26:07 by mgayduk          ###   ########.fr       */
+/*   Updated: 2019/07/23 16:02:08 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,11 @@ void			compute_width_float(t_fq *fq);
 void			add_sign_float(t_fq *fq);
 
 /*
+**	to specify file descriptor:
+** 		ft_printf("%& some %&text", 2, 3);
+** 'some ' will be redirected to stderr
+** 'text' to file with descriptor 3	
+**
 **	%k print current date and time in defferent formats
 **	hh 				: hh:mm:ss
 **	h				: hh:mm

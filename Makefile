@@ -6,7 +6,7 @@
 #    By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2019/07/22 17:45:43 by maks             ###   ########.fr        #
+#    Updated: 2019/07/23 15:04:51 by maks             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,7 +134,8 @@ BTREE_FUNCS :=	ft_btreenew.c 				\
 				ft_btree_inorder_print.c				
 		
 FT_GETOPT :=	ft_getopt.c					\
-				flag_parser.c
+				flag_parser.c				\
+				getopt_utils.c
 
 
 SRCS = 	$(MEM_FUNCS)	$(STR_FUNCS)	$(STR_ARR_FUNCS)  	\
