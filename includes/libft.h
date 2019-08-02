@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
+/*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/07/22 19:06:39 by maks             ###   ########.fr       */
+/*   Updated: 2019/08/02 15:28:35 by mgayduk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 # include "ft_printf.h"
 # include "ft_btree.h"
 # include "ft_getopt.h"
+
+# define FT_DUMP_SIZE 32
+# define FT_DUMP_CHUNK 8
 
 # define FT_ABS(x) x < 0 ? -x : x
 # define FT_BOOL(x) x ? 1 : 0
@@ -62,6 +65,7 @@ void				*ft_memchr(void const *s, int c, size_t n);
 int					ft_memcmp(void const *s1, void const *s2, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
+void				ft_memdump(void *ptr, size_t mem_size);
 
 size_t				ft_strlen(char const *str);
 char				*ft_strdup(char const *s1);

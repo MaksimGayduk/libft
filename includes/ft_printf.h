@@ -6,7 +6,7 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 14:52:28 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/07/23 16:02:08 by maks             ###   ########.fr       */
+/*   Updated: 2019/07/31 18:40:03 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,8 @@ void			add_sign_float(t_fq *fq);
 
 /*
 **	to specify file descriptor:
-** 		ft_printf("%& some %&text", 2, 3);
-** 'some ' will be redirected to stderr
-** 'text' to file with descriptor 3	
+** 		ft_printf("%& some text", 2);
+** 'some text' will be redirected to stderr
 **
 **	%k print current date and time in defferent formats
 **	hh 				: hh:mm:ss

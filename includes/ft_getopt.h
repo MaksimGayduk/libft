@@ -6,7 +6,7 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 12:59:03 by maks              #+#    #+#             */
-/*   Updated: 2019/07/23 15:24:23 by maks             ###   ########.fr       */
+/*   Updated: 2019/07/31 11:19:38 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define FT_GETOPT_H
 
 # include "libft.h"
+
+/*
+** The behavior of ft_getopt is the same as getopt from libc.
+*/
 
 typedef struct		s_flag
 {

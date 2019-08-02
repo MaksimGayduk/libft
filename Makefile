@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+         #
+#    By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2019/07/23 15:04:51 by maks             ###   ########.fr        #
+#    Updated: 2019/08/02 15:25:41 by mgayduk          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ MEM_FUNCS 	:= 	ft_memset.c 		\
 				ft_memcmp.c 		\
 				ft_memalloc.c 		\
 				ft_memdel.c 		\
+				ft_memdump.c		\
 
 STR_FUNCS 	:=	ft_strlen.c 		\
 				ft_strdup.c 		\
@@ -137,6 +138,8 @@ FT_GETOPT :=	ft_getopt.c					\
 				flag_parser.c				\
 				getopt_utils.c
 
+FT_UNIT_TESTS := ft_unit_int.c
+
 
 SRCS = 	$(MEM_FUNCS)	$(STR_FUNCS)	$(STR_ARR_FUNCS)  	\
 		$(CHAR_FUNCS)	$(LIST_FUNCS) 	$(INT_FUNCS)    	\
@@ -144,8 +147,6 @@ SRCS = 	$(MEM_FUNCS)	$(STR_FUNCS)	$(STR_ARR_FUNCS)  	\
 		$(FT_GETOPT)
 
 OBJS = $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
-
-all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
