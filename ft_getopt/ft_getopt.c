@@ -63,12 +63,11 @@ void	process_invalid_flag(t_flag *flag, const char *opstr, const char *pname)
 	flag->symbol = ('?');
 }
 
-int		ft_getopt(int argc, char *const *argv, const char *opstr)
+int		ft_getopt(int __attribute__ ((unused)) argc, char *const *argv, const char *opstr)
 {
 	int		flag_symbol;
 	t_flag	*flag;
 
-	argc = 0;
 	if (!is_flag(argv[optind]))
 		return (-1);
 	flag = parse_flag(argv[optind], opstr);

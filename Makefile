@@ -132,8 +132,8 @@ BTREE_FUNCS :=	ft_btreenew.c 				\
 				ft_btree_find.c 			\
 				ft_btreedelone.c 			\
 				ft_btree_erase.c			\
-				ft_btree_inorder_print.c				
-		
+				ft_btree_inorder_print.c
+
 FT_GETOPT :=	ft_getopt.c					\
 				flag_parser.c				\
 				getopt_utils.c
@@ -163,6 +163,6 @@ clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
-re: fclean all
+re: fclean $(NAME)

@@ -16,7 +16,7 @@ int g_flag_position;
 
 static int	is_flag_valid(int flag, const char *opt_str)
 {
-	return (FT_BOOL((int)ft_strchr(opt_str, flag)));
+	return (FT_BOOL((long)ft_strchr(opt_str, flag)));
 }
 
 static int	flag_has_argument(int flag, const char *opt_str)

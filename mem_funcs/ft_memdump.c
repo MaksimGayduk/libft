@@ -26,7 +26,7 @@ static void	print_header(void)
 		if (i % FT_DUMP_CHUNK == 0 && i % FT_DUMP_SIZE != 0)
 			ft_printf("	");
 		if (i % FT_DUMP_SIZE == 0)
-			ft_printf("\n\n");
+			ft_printf("\n");
 	}
 }
 
@@ -49,6 +49,7 @@ void		ft_memdump(void *ptr, size_t mem_size)
 		if (i % FT_DUMP_CHUNK == 0 && i % FT_DUMP_SIZE != 0)
 			ft_printf("	");
 		if (i % FT_DUMP_SIZE == 0)
-			ft_printf("\n");
+			ft_putchar('\n');
 	}
+	ft_putchar('\n');
 }
