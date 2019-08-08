@@ -6,7 +6,7 @@
 /*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/02 15:28:35 by mgayduk          ###   ########.fr       */
+/*   Updated: 2019/08/08 19:08:34 by mgayduk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@
 
 # define FT_ABS(x) x < 0 ? -x : x
 # define FT_BOOL(x) x ? 1 : 0
+
+# define FT_FREE_FIRST	0
+# define FT_FREE_SECOND	1
+# define FT_FREE_BOTH	2
 
 typedef struct		s_list
 {
@@ -92,6 +96,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s1, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin_m(char *s1, char *s2, int mode);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char	const *s, char c);
 size_t				ft_word_count(char const *s, char c);

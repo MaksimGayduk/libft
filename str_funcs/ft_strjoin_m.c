@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_m.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/01 17:46:58 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/08 18:46:39 by mgayduk          ###   ########.fr       */
+/*   Created: 2019/08/08 18:46:47 by mgayduk           #+#    #+#             */
+/*   Updated: 2019/08/08 19:08:01 by mgayduk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_m(char *s1, char *s2, int mode)
 {
-	size_t	len1;
-	size_t	len2;
-	char	*dest;
+    char *joined;
 
-	if (!s1 || !s2)
-		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	dest = ft_strnew(len1 + len2);
-	if (dest)
-	{
-		while ((*dest = *s1))
-		{
-			dest++;
-			s1++;
-		}
-		while ((*dest = *s2))
-		{
-			dest++;
-			s2++;
-		}
-		return (dest - (len1 + len2));
-	}
-	return (NULL);
+    joined = ft_strjoin(s1, s2);
+    if (mode == FT_FREE_FIRST || mode == FT_FREE_BOTH)
+    {
+        free(s1);
+    }
+    if (mode == FT_FREE_SECOND || mode == FT_FREE_BOTH)
+    {
+        free(s2);
+    }
+    return (joined);
 }

@@ -6,7 +6,7 @@
 #    By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2019/08/02 15:25:41 by mgayduk          ###   ########.fr        #
+#    Updated: 2019/08/08 19:06:15 by mgayduk          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ STR_FUNCS 	:=	ft_strlen.c 		\
 				ft_strnequ.c 		\
 				ft_strsub.c 		\
 				ft_strjoin.c 		\
+				ft_strjoin_m.c 		\
 				ft_strtrim.c 		\
 				ft_strsplit.c 		\
 				ft_word_count.c 	\
