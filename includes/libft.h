@@ -6,7 +6,7 @@
 /*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/08 19:08:34 by mgayduk          ###   ########.fr       */
+/*   Updated: 2019/08/10 12:04:33 by mgayduk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 
 # define FT_ABS(x) x < 0 ? -x : x
 # define FT_BOOL(x) x ? 1 : 0
+# define FT_TO_BYTES(x) (x >> 3)
+# define FT_TO_BITS(x) (x << 3)
 
 # define FT_FREE_FIRST	0
 # define FT_FREE_SECOND	1
