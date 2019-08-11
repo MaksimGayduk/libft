@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/10 13:59:24 by mgayduk          ###   ########.fr       */
+/*   Updated: 2019/08/11 13:06:29 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,14 @@
 # define FT_BOOL(x) x ? 1 : 0
 # define FT_TO_BYTES(x) (x >> 3)
 # define FT_TO_BITS(x) (x << 3)
+
+/**
+ * x - value to rotate
+ * n - number of bit rotate to
+ * s - size of the value in bits
+ */
+# define FT_ROTL(x, n, s) (((x) << (n)) | ((x) >> ((s) - (n))))
+# define FT_ROTR(x, n, s) (((x) >> (n)) | ((x) << ((s) - (n))))
 
 # define FT_FREE_FIRST	0
 # define FT_FREE_SECOND	1
