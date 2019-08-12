@@ -6,7 +6,7 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/11 13:06:29 by maks             ###   ########.fr       */
+/*   Updated: 2019/08/12 13:36:02 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@
 # define FT_BOOL(x) x ? 1 : 0
 # define FT_TO_BYTES(x) (x >> 3)
 # define FT_TO_BITS(x) (x << 3)
+
+/**
+ * bit shift
+ */
+# define SHR(x, n) ((x) >> (n))
+# define SHL(x, n) ((x) << (n))
 
 /**
  * x - value to rotate
