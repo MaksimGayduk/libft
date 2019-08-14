@@ -6,7 +6,7 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/12 13:36:02 by maks             ###   ########.fr       */
+/*   Updated: 2019/08/14 11:43:14 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@
 # define FT_TO_BYTES(x) (x >> 3)
 # define FT_TO_BITS(x) (x << 3)
 
-/**
- * bit shift
- */
+/*
+** bit shift
+*/
 # define SHR(x, n) ((x) >> (n))
 # define SHL(x, n) ((x) << (n))
 
-/**
- * x - value to rotate
- * n - number of bit rotate to
- * s - size of the value in bits
- */
+/*
+** x - value to rotate
+** n - number of bit rotate to
+** s - size of the value in bits
+*/
 # define FT_ROTL(x, n, s) (((x) << (n)) | ((x) >> ((s) - (n))))
 # define FT_ROTR(x, n, s) (((x) >> (n)) | ((x) << ((s) - (n))))
 
@@ -53,7 +53,7 @@
 # define FT_TRUE	1
 # define FT_FALSE	0
 
-typedef	char	ft_bool;
+typedef	char	t_bool;
 
 typedef struct		s_list
 {
@@ -91,6 +91,7 @@ int					ft_memcmp(void const *s1, void const *s2, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 void				ft_memdump(void *ptr, size_t mem_size);
+void				*ft_memcpy_rev(void *dst, const void *src, size_t n);
 
 size_t				ft_strlen(char const *str);
 char				*ft_strdup(char const *s1);

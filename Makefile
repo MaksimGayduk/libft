@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+         #
+#    By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2019/08/08 19:06:15 by mgayduk          ###   ########.fr        #
+#    Updated: 2019/08/13 17:40:22 by maks             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ MEM_FUNCS 	:= 	ft_memset.c 		\
 				ft_memalloc.c 		\
 				ft_memdel.c 		\
 				ft_memdump.c		\
+				ft_memcpy_rev.c
 
 STR_FUNCS 	:=	ft_strlen.c 		\
 				ft_strdup.c 		\

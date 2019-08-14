@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getopt.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 12:43:54 by maks              #+#    #+#             */
-/*   Updated: 2019/08/02 15:27:06 by mgayduk          ###   ########.fr       */
+/*   Updated: 2019/08/14 11:47:17 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ void	process_invalid_flag(t_flag *flag, const char *opstr, const char *pname)
 	flag->symbol = ('?');
 }
 
-int		ft_getopt(int __attribute__ ((unused)) argc, char *const *argv, const char *opstr)
+int		ft_getopt(
+	int __attribute__((unused)) argc,
+	char *const *argv,
+	const char *opstr)
 {
 	int		flag_symbol;
 	t_flag	*flag;

@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_m.c                                     :+:      :+:    :+:   */
+/*   ft_memcpy_rev.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 18:46:47 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/14 11:39:54 by maks             ###   ########.fr       */
+/*   Created: 2019/08/13 17:36:46 by maks              #+#    #+#             */
+/*   Updated: 2019/08/14 11:39:24 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_m(char *s1, char *s2, int mode)
+void	*ft_memcpy_rev(void *dst, const void *src, size_t n)
 {
-	char *joined;
+	char			*s1;
+	char			*s2;
+	unsigned int	i;
+	unsigned int	j;
 
-	joined = ft_strjoin(s1, s2);
-	if (mode == FT_FREE_FIRST || mode == FT_FREE_BOTH)
+	if (n == 0 || dst == src)
+		return (dst);
+	s1 = (char *)dst;
+	s2 = (char *)src;
+	i = 0;
+	j = n - 1;
+	while (i < n)
 	{
-		free(s1);
+		s1[i] = s2[j];
+		i++;
+		j--;
 	}
-	if (mode == FT_FREE_SECOND || mode == FT_FREE_BOTH)
-	{
-		free(s2);
-	}
-	return (joined);
+	return (dst);
 }
