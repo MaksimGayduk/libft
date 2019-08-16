@@ -2,4 +2,5 @@
 !.gitignore
 
 objs
+deps
 *.a

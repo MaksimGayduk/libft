@@ -6,7 +6,7 @@
 #    By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2019/08/16 17:36:14 by maks             ###   ########.fr        #
+#    Updated: 2019/08/16 17:40:18 by maks             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,16 @@ CC 		:= gcc -Wall -Wextra -Werror -c -g
 
 NAME 	:= libft.a
 
+SRC_DIR := ./sources
 INC_DIR := ./includes
+OBJ_DIR	:= ./objs
+DEP_DIR	:= ./deps
 
 SRC_DIRS := mem_funcs	str_funcs	str_arr_funcs	\
 			char_funcs 	list_funcs 	int_funcs		\
 			rw_funcs 	ft_printf 	btree_funcs		\
 			ft_getopt
-
-OBJ_DIR	:= ./objs
-DEP_DIR	:= ./deps
+SRC_DIRS := $(addprefix $(SRC_DIR)/, $(SRC_DIRS))
 
 # Source files
 SEARCH_WILCARDS := $(addsuffix /*.c,$(SRC_DIRS))
