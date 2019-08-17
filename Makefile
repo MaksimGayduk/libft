@@ -6,7 +6,7 @@
 #    By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2019/08/16 17:40:18 by maks             ###   ########.fr        #
+#    Updated: 2019/08/17 15:19:25 by maks             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,17 +27,15 @@ SRC_DIRS := $(addprefix $(SRC_DIR)/, $(SRC_DIRS))
 
 # Source files
 SEARCH_WILCARDS := $(addsuffix /*.c,$(SRC_DIRS))
-SRC := $(notdir $(patsubst %.c,%.o,$(wildcard $(SEARCH_WILCARDS))))
+SRC := $(notdir $(wildcard $(SEARCH_WILCARDS)))
 
 # Object files
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
-OBJS = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
-
 all: prepare_dirs $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 prepare_dirs:
