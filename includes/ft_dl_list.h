@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_dl_list.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 13:39:35 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/22 11:04:37 by maks             ###   ########.fr       */
+/*   Created: 2019/08/19 17:02:52 by maks              #+#    #+#             */
+/*   Updated: 2019/08/19 17:16:19 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_DL_LIST_H
+# define FT_DL_LIST_H
 
-void	ft_putnbr(intmax_t n)
+# include "libft.h"
+
+typedef struct s_dl_list
 {
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = -n;
-	}
-	if (n <= 9)
-	{
-		ft_putchar(n + '0');
-		return ;
-	}
-	ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');
-}
+	void			*content;
+	size_t			content_size;
+	struct s_btree	*prev;
+	struct s_btree	*next;
+}					t_dl_list;
+
+
+t_dl_list			*ft_dl_list_new(void const *content, size_t content_size);
+
+#endif

@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_numlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/19 18:05:00 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/21 19:15:00 by maks             ###   ########.fr       */
+/*   Created: 2019/08/21 19:15:05 by maks              #+#    #+#             */
+/*   Updated: 2019/08/21 19:17:59 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa_base(intmax_t n, char base, int char_case)
+size_t	ft_numlen_base(intmax_t n, char base)
 {
-	intmax_t	num;
-	char		temp;
-	size_t		len;
-	char		*str;
+	size_t len;
 
-	num = n;
-	len = ft_numlen_base(n, base);
-	str = ft_strnew(len);
-	if (n == 0)
-		str[0] = '0';
-	len--;
-	while (num)
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
 	{
-		temp = FT_ABS(num % base);
-		if (temp <= 9)
-			str[len] = temp + '0';
-		else
-			str[len] = temp - 10 + (char_case == 1 ? 'A' : 'a');
-		num /= base;
-		len--;
+		len++;
+		n = n / base;
 	}
-	if (n < 0)
-		str[len] = '-';
-	return (str);
+	return (len);
 }

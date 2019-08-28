@@ -6,7 +6,7 @@
 #    By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/25 17:24:42 by mgayduk           #+#    #+#              #
-#    Updated: 2019/08/17 15:19:25 by maks             ###   ########.fr        #
+#    Updated: 2019/08/19 17:15:05 by maks             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ DEP_DIR	:= ./deps
 SRC_DIRS := mem_funcs	str_funcs	str_arr_funcs	\
 			char_funcs 	list_funcs 	int_funcs		\
 			rw_funcs 	ft_printf 	btree_funcs		\
-			ft_getopt
+			ft_getopt	dl_list_funcs
 SRC_DIRS := $(addprefix $(SRC_DIR)/, $(SRC_DIRS))
 
 # Source files

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_itoa16.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/19 18:05:00 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/21 19:15:00 by maks             ###   ########.fr       */
+/*   Created: 2019/08/21 18:46:40 by maks              #+#    #+#             */
+/*   Updated: 2019/08/22 17:02:10 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa_base(intmax_t n, char base, int char_case)
+static void set_prefix(char *str)
+{
+	str[0] = '0';
+	str[1] = 'x';
+}
+
+char			*ft_itoa16(uintmax_t n, t_bool char_case, t_bool prefix)
 {
 	intmax_t	num;
 	char		temp;
@@ -20,22 +26,21 @@ char			*ft_itoa_base(intmax_t n, char base, int char_case)
 	char		*str;
 
 	num = n;
-	len = ft_numlen_base(n, base);
+	len = prefix ? (ft_numlen_base(n, 16) + 2) : ft_numlen_base(n, 16);
 	str = ft_strnew(len);
 	if (n == 0)
 		str[0] = '0';
 	len--;
 	while (num)
 	{
-		temp = FT_ABS(num % base);
+		temp = FT_ABS(num % 16);
 		if (temp <= 9)
 			str[len] = temp + '0';
 		else
 			str[len] = temp - 10 + (char_case == 1 ? 'A' : 'a');
-		num /= base;
+		num /= 16;
 		len--;
 	}
-	if (n < 0)
-		str[len] = '-';
+	prefix ? set_prefix(str) : NULL;
 	return (str);
 }

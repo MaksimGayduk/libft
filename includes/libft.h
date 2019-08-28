@@ -6,7 +6,7 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/16 17:35:17 by maks             ###   ########.fr       */
+/*   Updated: 2019/08/22 11:19:59 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include "ft_printf.h"
 # include "ft_btree.h"
 # include "ft_getopt.h"
+# include "ft_dl_list.h"
 
 # define FT_DUMP_SIZE 32
 # define FT_DUMP_CHUNK 8
@@ -31,6 +32,7 @@
 # define FT_BOOL(x) x ? 1 : 0
 # define FT_TO_BYTES(x) (x >> 3)
 # define FT_TO_BITS(x) (x << 3)
+# define FT_ALIGN_TO(x, n) (((((x) - 1) / n) * n) + n)
 
 /*
 ** bit shift
@@ -148,12 +150,15 @@ char				*ft_itoa_abs(long long n);
 char				*ft_ftoa(long double n, int precision);
 char				*ft_ftoa_abs(long double n, int precision);
 size_t				ft_numlen(intmax_t n);
+size_t				ft_numlen_base(intmax_t n, char base);
 int					ft_is_number(char *str);
+char				*ft_itoa16(uintmax_t n, t_bool char_case, t_bool prefix);
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
-void				ft_putnbr(int n);
+void				ft_putnbr(intmax_t n);
+void				ft_putnbr16(uintmax_t n, t_bool char_case, t_bool prefix);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
