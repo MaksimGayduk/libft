@@ -6,19 +6,19 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 18:46:40 by maks              #+#    #+#             */
-/*   Updated: 2019/08/22 17:02:10 by maks             ###   ########.fr       */
+/*   Updated: 2019/08/28 16:44:31 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void set_prefix(char *str)
+static void	set_prefix(char *str)
 {
 	str[0] = '0';
 	str[1] = 'x';
 }
 
-char			*ft_itoa16(uintmax_t n, t_bool char_case, t_bool prefix)
+char		*ft_itoa16(uintmax_t n, t_bool char_case, t_bool prefix)
 {
 	intmax_t	num;
 	char		temp;
