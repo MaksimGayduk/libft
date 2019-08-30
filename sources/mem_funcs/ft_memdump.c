@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdump.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgayduk <mgayduk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 12:19:36 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/02 15:25:09 by mgayduk          ###   ########.fr       */
+/*   Updated: 2019/08/30 17:06:07 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		ft_memdump(void *ptr, size_t mem_size)
 		ft_printf("%02hhx ", s[i]);
 		i++;
 		if (i % FT_DUMP_CHUNK == 0 && i % FT_DUMP_SIZE != 0)
-			ft_printf("	");
+			ft_printf("\t");
 		if (i % FT_DUMP_SIZE == 0)
 			ft_putchar('\n');
 	}

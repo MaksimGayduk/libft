@@ -6,7 +6,7 @@
 /*   By: maks <maksym.haiduk@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:03:18 by mgayduk           #+#    #+#             */
-/*   Updated: 2019/08/22 11:19:59 by maks             ###   ########.fr       */
+/*   Updated: 2019/08/30 18:13:15 by maks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@
 # define FT_TRUE	1
 # define FT_FALSE	0
 
-typedef	char	t_bool;
+typedef	int				t_bool;
+typedef	unsigned int	t_counter;
 
 typedef struct		s_list
 {
